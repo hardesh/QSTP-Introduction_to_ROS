@@ -4,15 +4,15 @@ For the first week:
 
 1)You will be learning basics of python:
 
-	Data types
+Data types
 
-	Basics of loops and conditions
+Basics of loops and conditions
 
-	Tuples, Lists, Dictionaries and their operations
+Tuples, Lists, Dictionaries and their operations
 
-	Functions in python
+Functions in python
 
-	Numpy basics
+Numpy basics
 
 
 The first three weeks of the course Intro to Computer Science and programming using Python on EDX will provide you with sufficient content for the basics. It is recommended to learn the concepts of OOP (classes and inheritance) in python WEEK 5 of the above course.
@@ -26,12 +26,11 @@ If you wish to learn from other sources you are free to do so.
 
 
 ->Link for some quick Examples if you are familiar with python programming:
+https://github.com/SforAiDl/Deep-Learning-TIP/blob/master/Week_1/lesson1_part_1.ipynb
 
-	https://github.com/SforAiDl/Deep-Learning-TIP/blob/master/Week_1/lesson1_part_1.ipynb
+https://github.com/SforAiDl/Deep-Learning-TIP/blob/master/Week_1/lesson1_part_2.ipynb
 
-	https://github.com/SforAiDl/Deep-Learning-TIP/blob/master/Week_1/lesson1_part_2.ipynb
-
-	https://github.com/SforAiDl/Deep-Learning-TIP/blob/master/Week_1/Lesson_2_numpy.ipynb
+https://github.com/SforAiDl/Deep-Learning-TIP/blob/master/Week_1/Lesson_2_numpy.ipynb
 
 
 
