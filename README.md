@@ -1,2 +1,2 @@
-# QSTP-Introduction_to_ROS
+# QSTP-Introduction to ROS
 This repository has all the material for QSTP
