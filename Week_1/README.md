@@ -26,6 +26,7 @@ If you wish to learn from other sources you are free to do so.
 
 
 ->Link for some quick Examples if you are familiar with python programming:
+
 https://github.com/SforAiDl/Deep-Learning-TIP/blob/master/Week_1/lesson1_part_1.ipynb
 
 https://github.com/SforAiDl/Deep-Learning-TIP/blob/master/Week_1/lesson1_part_2.ipynb
