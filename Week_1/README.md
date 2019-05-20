@@ -33,6 +33,6 @@ https://github.com/SforAiDl/Deep-Learning-TIP/blob/master/Week_1/lesson1_part_2.
 
 https://github.com/SforAiDl/Deep-Learning-TIP/blob/master/Week_1/Lesson_2_numpy.ipynb
 
-
+Also use the file names byte-of-python.pdf as a reference for learning python. It is a great resource!
 
 2)Complete the course preparation
