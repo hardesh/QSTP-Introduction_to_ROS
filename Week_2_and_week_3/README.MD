@@ -9,8 +9,8 @@ Before starting of with the next two week we recommend you to watch this video: 
 - (Optional) Go through other reference books [Lentin Joseph](https://drive.google.com/open?id=1bCXm0nXdi8WmATtreULFks1M_UhCYDFf), [Carlos Fairchild](https://drive.google.com/open?id=1iLgT2JfCJSog3NS4bFG6owDoHF6-hH9W)
 - Complete the evaluative and non-evaluative tasks
 
-  
 
+- Assignment for this week is in this folder.
 
 
 #### From this week onwards we will have evaluative assignments. Make sure you attempt the assignments. 
