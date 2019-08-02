@@ -35,4 +35,6 @@ https://github.com/SforAiDl/Deep-Learning-TIP/blob/master/Week_1/Lesson_2_numpy.
 
 Also use the file named byte-of-python.pdf as a reference for learning python. It is a great resource!
 
+You can also refer to sentdex's playlist on Youtube to learn Python.
+
 2)Complete the course preparation
