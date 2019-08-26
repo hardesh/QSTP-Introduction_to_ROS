@@ -1,0 +1,11 @@
+string stop_sequence_A
+
+---
+
+duration time_elapsed
+uint32 updates_sent
+
+---
+
+string string_typed
+uint32 string_len

@@ -1,0 +1,8 @@
+float32 fl1
+float32 fl2
+int32 int_opt
+
+---
+
+float64 result
+bool is_valid
