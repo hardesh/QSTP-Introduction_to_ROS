@@ -1,0 +1,152 @@
+<?xml version = "1.0"?>
+
+<robot name="rpy_ex">
+    <link name="base_link">
+        <!-- <collision>
+            <origin rpy="0 0 0" xyz="0 0 0.045"/>
+            <geometry>
+                <cylinder radius = "0.06" length = "0.09"/>
+            </geometry>
+        </collision> -->
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0.045"/>
+            <geometry>
+                <cylinder radius = "0.06" length = "0.09"/>
+            </geometry>
+        </visual>
+    </link>
+
+    <link name = "roll_m1_link">
+        <visual>
+            <origin rpy="0 1.57 0" xyz="0 0 0"/>
+            <geometry>
+                <cylinder radius = "0.01" length = "0.005"/>
+            </geometry>
+        </visual>
+    </link>
+
+    <link name = "pitch_m2_link">
+        <visual>
+            <origin rpy="1.57 0 0" xyz="0 0 0"/>
+            <geometry>
+                <cylinder radius = "0.01" length = "0.005"/>
+            </geometry>
+        </visual>
+    </link>
+
+    <link name = "yaw_m3_link">
+        <visual>
+            <origin rpy="0 0 1.57" xyz="0 0 0"/>
+            <geometry>
+                <cylinder radius = "0.01" length = "0.005"/>
+            </geometry>
+        </visual>
+    </link>
+
+    <link name = "head_link">
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <sphere radius = "0.06"/>
+            </geometry>
+            <material name = "green">
+                <color rgba="0.0 0.8 0.0 1.0"/>
+            </material>
+        </visual>
+    </link> 
+
+    <link name = "left_eye_link">
+        <visual>
+            <origin rpy="1.57 0 0" xyz="0 0 0"/>
+            <geometry>
+                <cylinder radius = "0.00525" length="0.00525"/>
+            </geometry>
+            <material name="black">
+                <color rgba="0.0 0.0 0.0 1.0"/>
+            </material>
+        </visual>
+    </link>   
+
+    <link name = "right_eye_link">
+        <visual>
+            <origin rpy="1.57 0 0" xyz="0 0 0"/>
+            <geometry>
+                <cylinder radius="0.00525" length="0.00525"/>
+            </geometry>
+            <material name="black">
+                <color rgba="0.0 0.0 0.0 1.0"/>
+            </material>
+        </visual>
+    </link> 
+
+    <link name="camera_link">
+        <visual>
+            <origin rpy="1.57 0 0" xyz="0 0 0"/>
+            <geometry>
+                <box size="0.005 0.005 0.005"/>
+            </geometry>
+            <material name="blue">
+                <color rgba="0.0 0.0 0.8 1.0"/>
+            </material>
+        </visual>
+    </link>
+
+
+    <joint name ="roll_joint" type="revolute">
+        <parent link = "base_link"/>
+        <child link ="roll_m1_link"/>
+        <origin rpy="0 0 0" xyz = "0 0 0.09"/>
+        <limit lower = "-0.78" upper = "0.78" effort="0.1" velocity="0.005"/>
+        <axis xyz = "1 0 0"/>
+    </joint>
+
+    <joint name ="pitch_joint" type="revolute">
+        <parent link = "roll_m1_link"/>
+        <child link="pitch_m2_link"/>
+        <origin rpy="0 0 0" xyz = "0 0 0"/>
+        <limit lower = "-0.78" upper = "0.78" effort="0.1" velocity="0.005"/>
+        <axis xyz = "0 1 0"/>
+    </joint>
+
+    <joint name ="yaw_joint" type="revolute">
+        <parent link = "pitch_m2_link"/>
+        <child link="yaw_m3_link"/>
+        <origin rpy="0 0 0" xyz = "0 0 0"/>
+        <limit lower = "-3.14" upper = "3.14" effort="0.1" velocity="0.005"/>
+        <axis xyz = "0 0 1"/>
+    </joint>
+    
+    <joint name ="base_head_joint" type="fixed">
+        <parent link = "yaw_m3_link"/>
+        <child link="head_link"/>
+        <origin rpy="0 0 0" xyz = "0 0 0.03"/>
+        <!-- <limit lower = "-3.14" upper = "3.14" effort="0.1" velocity="0.005"/> -->
+        <!-- <axis xyz = "0 0 1"/> -->
+    </joint>
+
+    <joint name ="head_le_joint" type="fixed">
+        <parent link = "head_link"/>
+        <child link="left_eye_link"/>
+        <origin rpy="0 0 0.164" xyz = "-0.01 0.06 0"/>
+        <!-- <limit lower = "-3.14" upper = "3.14" effort="0.1" velocity="0.005"/> -->
+        <!-- <axis xyz = "0 0 1"/> -->
+    </joint>
+
+    <joint name ="head_re_joint" type="fixed">
+        <parent link = "head_link"/>
+        <child link="right_eye_link"/>
+        <origin rpy="0 0 -0.164" xyz = "0.01 0.06 0"/>
+        <!-- <limit lower = "-3.14" upper = "3.14" effort="0.1" velocity="0.005"/> -->
+        <!-- <axis xyz = "0 0 1"/> -->
+    </joint>
+
+    <joint name ="head_camera_joint" type="fixed">
+        <parent link = "head_link"/>
+        <child link="camera_link"/>
+        <origin rpy="0 0 0" xyz = "0 0.055 0"/>
+        <!-- <limit lower = "-3.14" upper = "3.14" effort="0.1" velocity="0.005"/> -->
+        <!-- <axis xyz = "0 0 1"/> -->
+    </joint>
+
+</robot>
+

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<launch>
+
+  <param name="robot_description" command="cat '$(find solution_week4)/model/mira.urdf'" />
+
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+    <param name = "use_gui" value = "TRUE"/>
+  </node>
+
+  <node name="rsp" pkg="robot_state_publisher" type="robot_state_publisher"/>
+  <node name = "rviz" pkg="rviz" type="rviz" args="-d (find solution_week4)/rviz/mira.rviz"/>
+  
+</launch>

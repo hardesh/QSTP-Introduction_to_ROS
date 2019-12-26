@@ -1,0 +1,161 @@
+<?xml version = "1.0"?>
+<robot name = "tele_bot">
+  <link name = "chassis">
+    <collision>
+      <origin rpy = "0 0 0" xyz = "0 0 0.1"/>
+      <geometry>
+        <box size = "0.2 0.2 0.1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy = "0 0 0" xyz = "0 0 0.1"/>
+      <geometry>
+        <box size = "0.2 0.2 0.1"/>
+      </geometry>
+    </visual>
+    <inertial>
+      <mass value = "1"/>
+      <inertia ixx = "0.00416" iyy = "0.01416" izz = "0.01667" ixy = "0.0" ixz = "0.0" iyz = "0.0"/>
+    </inertial>
+  </link>
+
+  <link name = "right_back">
+    <visual>
+      <origin rpy = "0 1.57 1.57" xyz = "0 0 0"/>
+        <geometry>
+          <cylinder radius = "0.05" length = "0.05"/>
+        </geometry>
+      <material name="black">
+        <color rgba="0.0 0.0 0.0 1.0"/>
+      </material>
+    </visual>
+    <collision>
+        <origin rpy = "0 1.57 1.57" xyz = "0 0 0"/>
+        <geometry>
+          <cylinder radius = "0.05" length = "0.05"/>
+        </geometry>
+    </collision>
+    <inertial>
+      <mass value = "0.1"/>
+      <inertia ixx = "0.00008" iyy = "0.00002" izz = "0.00008" ixy = "0.0" ixz = "0.0" iyz = "0.0"/>
+    </inertial>
+  </link>
+
+  <link name = "left_back">
+    <visual>
+      <origin rpy = "0 1.57 1.57" xyz = "0 0 0"/>
+      <geometry>
+        <cylinder radius = "0.05" length = "0.05"/>
+      </geometry>
+      <material name="black">
+        <color rgba="0.0 0.0 0.0 1.0"/>
+      </material>
+    </visual>
+    <collision>
+        <origin rpy = "0 1.57 1.57" xyz = "0 0 0"/>
+        <geometry>
+          <cylinder radius = "0.05" length = "0.05"/>
+        </geometry>
+    </collision>
+    <inertial>
+      <mass value = "0.1"/>
+      <inertia ixx = "0.00008" iyy = "0.00002" izz = "0.00008" ixy = "0.0" ixz = "0.0" iyz = "0.0"/>
+    </inertial>
+  </link>
+
+    <link name = "right_front">
+    <visual>
+      <origin rpy = "0 1.57 1.57" xyz = "0 0 0"/>
+        <geometry>
+          <cylinder radius = "0.05" length = "0.05"/>
+        </geometry>
+      <material name="black">
+        <color rgba="0.0 0.0 0.0 1.0"/>
+      </material>        
+    </visual>
+    <collision>
+        <origin rpy = "0 1.57 1.57" xyz = "0 0 0"/>
+        <geometry>
+          <cylinder radius = "0.05" length = "0.05"/>
+        </geometry>
+    </collision>
+    <inertial>
+      <mass value = "0.1"/>
+      <inertia ixx = "0.00008" iyy = "0.00002" izz = "0.00008" ixy = "0.0" ixz = "0.0" iyz = "0.0"/>
+    </inertial>
+  </link>
+
+  <link name = "left_front">
+    <visual>
+      <origin rpy = "0 1.57 1.57" xyz = "0 0 0"/>
+        <geometry>
+          <cylinder radius = "0.05" length = "0.05"/>
+        </geometry>
+      <material name="black">
+        <color rgba="0.0 0.0 0.0 1.0"/>
+      </material>
+    </visual>
+    <collision>
+        <origin rpy = "0 1.57 1.57" xyz = "0 0 0"/>
+        <geometry>
+          <cylinder radius = "0.05" length = "0.05"/>
+        </geometry>
+    </collision>
+    <inertial>
+      <mass value = "0.1"/>
+      <inertia ixx = "0.00008" iyy = "0.00002" izz = "0.00008" ixy = "0.0" ixz = "0.0" iyz = "0.0"/>
+    </inertial>
+  </link>
+
+  <joint name = "right_back_hinge" type="continuous">
+    <parent link = "chassis"/>
+    <child link = "right_back"/>
+    <origin rpy = "0 0 0" xyz = "-0.1 -0.125 0.05"/>
+    <!-- <limit lower = "-0.2" upper = "0.2" effort = "0.1" velocity = "0.005"/> -->
+    <axis xyz = "0 1 0"/>
+  </joint>
+
+  <joint name = "right_front_hinge" type="continuous">
+    <parent link = "chassis"/>
+    <child link = "right_front"/>
+    <origin rpy = "0 0 0" xyz = "0.1 -0.125 0.05"/>
+    <!-- <limit lower = "-0.2" upper = "0.2" effort = "0.1" velocity = "0.005"/> -->
+    <axis xyz = "0 1 0"/>
+  </joint>
+
+  <joint name = "left_back_hinge" type="continuous">
+    <parent link = "chassis"/>
+    <child link = "left_back"/>
+    <origin rpy = "0 0 0" xyz = "-0.1 0.125 0.05"/>
+    <!-- <limit lower = "-0.2" upper = "0.2" effort = "0.1" velocity = "0.005"/> -->
+    <axis xyz = "0 1 0"/>
+  </joint>
+
+  <joint name = "left_front_hinge" type="continuous">
+    <parent link = "chassis"/>
+    <child link = "left_front"/>
+    <origin rpy = "0 0 0" xyz = "0.1 0.125 0.05"/>
+    <!-- <limit lower = "-0.2" upper = "0.2" effort = "0.1" velocity = "0.005"/> -->
+    <axis xyz = "0 1 0"/>
+  </joint>
+
+
+  <gazebo>
+  <plugin name="skid_steer_drive_controller" filename="libgazebo_ros_skid_steer_drive.so">
+    <updateRate>100.0</updateRate>
+    <robotNamespace>/tele_bot</robotNamespace>
+    <leftFrontJoint>left_front_hinge</leftFrontJoint>
+    <rightFrontJoint>right_front_hinge</rightFrontJoint>
+    <leftRearJoint>left_back_hinge</leftRearJoint>
+    <rightRearJoint>right_back_hinge</rightRearJoint>
+    <wheelSeparation>0.2</wheelSeparation>
+    <wheelDiameter>0.05</wheelDiameter>
+    <covariance_yaw>0.0</covariance_yaw>
+    <robotBaseFrame>chassis</robotBaseFrame>
+    <torque>5</torque>
+    <topicName>cmd_vel</topicName>
+    <broadcastTF>true</broadcastTF>
+  </plugin>
+  </gazebo>
+
+</robot> 

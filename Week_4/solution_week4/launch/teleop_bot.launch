@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<launch>
+
+<param name="robot_description" command="cat '$(find solution_week4)/model/bot.urdf'" />
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>
+  
+  <node pkg="gazebo_ros" type="spawn_model" name="spawn_urdf" 
+  args="-urdf -model tele_bot -x -10.0 -y 0.0 -z 0.0 -param robot_description" />
+
+  <node pkg="solution_week4" type="teleop_node.py" name="teleop_node" output="screen"/>
+</launch>
